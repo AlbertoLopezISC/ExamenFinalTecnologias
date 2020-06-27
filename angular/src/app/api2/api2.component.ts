@@ -10,6 +10,7 @@ export class Api2Component implements OnInit {
   id: string;
   band = false;
   municipios: [] = [];
+  estado: string;
   constructor(public apiserver: NodeapisService) { }
 
   ngOnInit(): void {
@@ -25,6 +26,7 @@ export class Api2Component implements OnInit {
         this.apiserver.getapi2('http://localhost:3000/api2/' + this.id).subscribe((data: any) => {
           this.band = true;
           this.municipios = data.datos;
+          this.estado = data.estado;
           console.log(this.municipios);
         });
       } else {

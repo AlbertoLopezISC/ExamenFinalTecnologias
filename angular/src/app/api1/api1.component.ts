@@ -26,19 +26,16 @@ export class Api1Component implements OnInit {
       this.apiserver.getapi1('http://localhost:3000/api/' + this.estado).subscribe((data: any) => {
         if (data.datos) {
           this.dataEstado = data.datos[0];
-          console.log(this.dataEstado);
-          console.log(this.dataEstado.viv);
-        }
-        else {
+          this.band = true;
+        } else {
           swal.fire({ icon: 'error', title: 'Estado NO Encontrado' });
-          this.dataEstado=[];
-          console.log(this.dataEstado);
+          this.dataEstado = [];
+          this.band = false;
         }
 
       });
-    }
-    else {
-      swal.fire({ icon: 'error', title: 'Estado NO Encontrado' });
+    } else {
+      swal.fire({ icon: 'error', title: 'Debes llenar correctamente el input' });
     }
   }
 
