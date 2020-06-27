@@ -9,27 +9,32 @@ import { NodeapisService } from '../nodeapis.service';
   styleUrls: ['./api1.component.css']
 })
 export class Api1Component implements OnInit {
-   estado: string;
-    band: boolean= false;
+  estado: string;
+  band: boolean = false;
+  dataEstado: any;
   ngOnInit(): void {
   }
 
-  constructor (public apiserver: NodeapisService){}
+  constructor(public apiserver: NodeapisService) { }
 
-  get():void{
-      console.log(this.estado);
-      this.band=true;
-   /* let urlapi = ``;
-    this.apiserver.getapi1(urlapi).subscribe((data:any)=>{
-
-    });*/
-  }
-
-  onSubmit(userForm){
+  get(): void {
     console.log(this.estado);
-      this.band=true;
+    this.band = true;
+    /* let urlapi = ``;
+     this.apiserver.getapi1(urlapi).subscribe((data:any)=>{
+     });*/
   }
 
-  
+  onSubmit(userForm) {
+    console.log(this.estado);
+    this.apiserver.getapi1('http://localhost:3000/api/' + this.estado).subscribe((data: any) => {
+      this.dataEstado = data.datos[0];
+      this.band = true;
+      console.log(this.dataEstado);
+      console.log(this.dataEstado.viv);
+    });
+  }
+
+
 
 }

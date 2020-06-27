@@ -8,13 +8,14 @@ export class NodeapisService {
 
   constructor(public http: HttpClient) { }
 
-  getapi1(url:string){
+  getapi1(url: string) {
+    console.log(url);
     return this.http.get(url);
- }
+  }
 
-  getapi2(url:string){
+  getapi2(url: string) {
     return this.http.get(url);
- }
+  }
 
 
 }

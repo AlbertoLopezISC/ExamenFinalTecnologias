@@ -1,12 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-//const cors = require('cors');
+const cors = require('cors');
 const misRutas = require('./routes/rutas');
 
 const app = express();
 const port = process.env.port || 3000;
 
-//app.use(cors());
+app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use('/',misRutas);
