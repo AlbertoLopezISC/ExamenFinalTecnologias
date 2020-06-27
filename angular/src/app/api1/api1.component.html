@@ -1,0 +1,28 @@
+<div class="card" >
+    <div class="card-body">
+        <div class="card-header">
+            <p>API 1</p>
+        </div>
+         <form  (ngSubmit)="onSubmit(userForm)" #userForm="ngForm" novalidate="" class="input-group mb-3" >
+            <input type="text" id="estado" class="form-control"  placeholder="Estado"  [(ngModel)]="estado" name="estado" #name="ngModel"  required>
+           <div class="input-group-append">
+            <button type="submit" class="btn btn-outline-dark"  [disabled]="userForm.invalid" >Buscar</button>
+           </div>
+        </form> 
+    </div>
+
+    <div class="container" *ngIf="band">
+        <div class="card mt-2 ml-5 mr-5 mb-5 tabla"  >
+            <div class="card-header">
+                Featured
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Cras justo odio</li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+          </div>
+    </div>
+    
+
+  </div>
