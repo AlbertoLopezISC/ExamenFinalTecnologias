@@ -1,27 +1,39 @@
 <div class="card" style="width: 100%">
     <div class="card-body">
         <div class="card-header">
-            <p>API 2</p>
+            <h4>API 2: Buscar Por Clave</h4>
         </div>
          <form class="input-group mb-3" >
-            <input type="text" class="form-control" placeholder="01"  [(ngModel)]="id"  name="id">
+            <input type="text" class="form-control" placeholder="01"  [(ngModel)]="id"  name="id" (keyup.enter)="get()">
             <div class="input-group-append">
             <button type="button" class="btn btn-outline-dark" (click)="get()" >Buscar</button>
             </div>
         </form> 
     </div>
 
-    <div class="container" *ngIf="band">
-        <div class="card mt-2 ml-5 mr-5 mb-5 tabla" >
-            <div class="card-header">
-                Featured
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Cras justo odio</li>
-              <li class="list-group-item">Dapibus ac facilisis in</li>
-              <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
-          </div>
+    <div class="container " *ngIf="municipios.length!=0">
+        <table class="table" style="width: max-content; height: auto;"> 
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Municipio</th>
+                <th scope="col">Poblacion</th>
+                <th scope="col">Poblacion <br> Femenina</th>
+                <th scope="col">Poblacion <br>  Masculina</th>
+                <th scope="col">Viviendas  <br> Habitadas</th>
+              </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let item of municipios" >
+              <tr >
+                <th scope="row">{{item.nom_agem}}</th>
+                <td>{{item.pob}}</td>
+                <td>{{item.pob_fem}}</td>
+                <td>{{item.pob_mas}}</td>
+                <td>{{item.viv}}</td>
+              </tr>
+            </ng-container>
+            </tbody>
+          </table>
     </div>
     
 

@@ -1,25 +1,28 @@
 <div class="card" >
     <div class="card-body">
         <div class="card-header">
-            <p>API 1</p>
+            <h4>API 1: Buscar Por Nombre</h4>
         </div>
-         <form  (ngSubmit)="onSubmit(userForm)" #userForm="ngForm" novalidate="" class="input-group mb-3" >
-            <input type="text" id="estado" class="form-control"  placeholder="Estado"  [(ngModel)]="estado" name="estado" #name="ngModel"  required>
+         <form  class="input-group mb-3" >
+            <input type="text"  class="form-control"  placeholder="Estado"  [(ngModel)]="estado" name="estado" #name="ngModel"  (keyup.enter)="onSubmit()">
            <div class="input-group-append">
-            <button type="submit" class="btn btn-outline-dark"  [disabled]="userForm.invalid" >Buscar</button>
+            <button type="submit" class="btn btn-outline-dark"  (click)="onSubmit()" >Buscar</button>
            </div>
         </form> 
     </div>
 
-    <div class="container" *ngIf="band">
+    <div class="container" style="width: 70%; text-align: center;" *ngIf="">
         <div class="card mt-2 ml-5 mr-5 mb-5 tabla"  >
             <div class="card-header">
-                Featured
+                {{dataEstado.nom_agee}}
             </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Cras justo odio</li>
-              <li class="list-group-item">Dapibus ac facilisis in</li>
-              <li class="list-group-item">Vestibulum at eros</li>
+            <ul class="list-group list-group-flush" style="color:black; text-align: left;">
+              <li class="list-group-item"> Clave estatal: {{dataEstado.cve_agee}}</li>
+              <li class="list-group-item"> Nombre abreviado: {{dataEstado.nom_abrev}}</li>
+              <li class="list-group-item"> Población total: {{dataEstado.pob}}</li>
+              <li class="list-group-item"> Población femenina: {{dataEstado.pob_fem}}</li>
+              <li class="list-group-item"> Población masculina: {{dataEstado.pob_mas}}</li>
+              <li class="list-group-item"> Total de viviendas habitadas{{dataEstado.viv}}</li>
             </ul>
           </div>
     </div>
