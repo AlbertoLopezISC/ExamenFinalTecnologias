@@ -11,9 +11,9 @@
         </form> 
     </div>
 
-    <div class="container " *ngIf="municipios.length!=0">
+    <ng-container  *ngIf="municipios.length!=0">
       <h2>{{this.estado}}</h2>
-        <table class="table" style="width: max-content; height: auto;"> 
+        <table class="table" style="width: auto; height: auto;"> 
             <thead class="thead-dark">
               <tr>
                 <th scope="col">Municipio</th>
@@ -35,7 +35,7 @@
             </ng-container>
             </tbody>
           </table>
-    </div>
+      </ng-container>
     
 
   </div>

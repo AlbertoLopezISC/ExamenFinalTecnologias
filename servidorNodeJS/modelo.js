@@ -8,8 +8,6 @@ const modelDatos = {
             })
             .catch(err => { console.log(err); return err });
     },
-
-
     getMunicipios: async (id) => {
         return await axios.get('https://gaia.inegi.org.mx/wscatgeo/mgee/' + id)
             .then(data => {
@@ -24,5 +22,4 @@ const modelDatos = {
             .catch(err => { console.log(err); return err });
     }
 }
-
 module.exports = modelDatos;

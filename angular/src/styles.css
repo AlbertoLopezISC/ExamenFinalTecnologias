@@ -2,7 +2,6 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 body{
-    background-image: url("../src/assets/d.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+
+    background:-webkit-radial-gradient(center center, circle, #cce6ff, rgb(93, 93, 93) );
 }
